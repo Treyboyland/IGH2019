@@ -55,7 +55,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DontDestroy.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyPool.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\HealRing.cs" />
+     <Compile Include="Assets\Scripts\IImpact.cs" />
+     <Compile Include="Assets\Scripts\ImpactRing.cs" />
+     <Compile Include="Assets\Scripts\KillRing.cs" />
+     <Compile Include="Assets\Scripts\MainLoader.cs" />
+     <Compile Include="Assets\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\PlayerKillRing.cs" />
+     <Compile Include="Assets\Scripts\RandomMovement.cs" />
+     <Compile Include="Assets\Scripts\RandomScaleXY.cs" />
+     <Compile Include="Assets\Scripts\TimeHelper.cs" />
+     <Compile Include="Assets\Scripts\TitleLoader.cs" />
+     <Compile Include="Assets\Scripts\TrackPlayer.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -100,6 +116,7 @@
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\Fonts\Press_Start_2P\OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
