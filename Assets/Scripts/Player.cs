@@ -2,21 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : IdentifiedCharacter
 {
     [SerializeField]
     float speed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField]
+    SpriteRenderer spriteRenderer;
 
+    [SerializeField]
+    List<Sprite> sprites;
+
+    [SerializeField]
+    GameObject goodStuff;
+
+    [SerializeField]
+    GameObject badStuff;
+
+    static Sprite playerSprite;
+
+    public static Sprite PlayerSprite
+    {
+        get
+        {
+            return playerSprite;
+        }
+        set
+        {
+            playerSprite = value;
+        }
+    }
+
+    [SerializeField]
+    bool isPlayerControlled;
+
+    public bool IsPlayerControlled
+    {
+        get
+        {
+            return isPlayerControlled;
+        }
+    }
+
+    // Start is called before the first frame update
+    protected override void Start()
+    {
+        base.Start();
+        PlayerSprite = sprites[UnityEngine.Random.Range(0, sprites.Count)];
+        spriteRenderer.sprite = PlayerSprite;
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdatePosition();
+        if (isPlayerControlled)
+        {
+            UpdatePosition();
+        }
+
     }
 
     void UpdatePosition()
@@ -27,5 +70,21 @@ public class Player : MonoBehaviour
         transform.position = pos;
     }
 
+    public void Harm()
+    {
+        isPlayerControlled = false;
+        badStuff.SetActive(true);
+        goodStuff.SetActive(false);
+        List<Sprite> sprites = Enemy.GetSprites();
+        spriteRenderer.sprite = sprites[UnityEngine.Random.Range(0, sprites.Count)];
+    }
+
+    public void Heal()
+    {
+        isPlayerControlled = true;
+        badStuff.SetActive(false);
+        goodStuff.SetActive(true);
+        spriteRenderer.sprite = PlayerSprite;
+    }
 
 }

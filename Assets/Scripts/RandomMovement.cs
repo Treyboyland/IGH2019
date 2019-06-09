@@ -5,21 +5,21 @@ using UnityEngine;
 public class RandomMovement : MonoBehaviour
 {
     [SerializeField]
-    TimeHelper helper;
+    protected TimeHelper helper;
 
     [SerializeField]
-    Vector2 randomSpeed;
+    protected Vector2 randomSpeed;
 
     [SerializeField]
-    Vector2 randomTime;
+    protected Vector2 randomTime;
 
     [SerializeField]
-    float speed;
+    protected float speed;
 
-    Vector3 movementVector;
+    protected Vector3 movementVector;
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (movementVector != Vector3.zero)
         {
@@ -29,12 +29,12 @@ public class RandomMovement : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         StartCoroutine(MoveAround());
     }
 
-    IEnumerator Wait(float seconds)
+    protected IEnumerator Wait(float seconds)
     {
         helper.RestartTime();
         while (!helper.HasPassedTime(seconds))
@@ -43,7 +43,7 @@ public class RandomMovement : MonoBehaviour
         }
     }
 
-    IEnumerator MoveAround()
+    protected IEnumerator MoveAround()
     {
         while (true)
         {

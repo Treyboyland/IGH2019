@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : IdentifiedCharacter
 {
     [SerializeField]
     SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    List<Sprite> sprites;
 
     [SerializeField]
     GameObject healedRing;
@@ -27,46 +30,81 @@ public class Enemy : MonoBehaviour
         {
             return isHealed;
         }
-    }
-
-    string id;
-
-    public string Id
-    {
-        get
+        set
         {
-            return id;
+            isHealed = value;
+            UpdateValues();
         }
     }
 
+    static List<Sprite> initialList;
+
+    static bool spritesRun = false;
+
+    static List<Sprite> availableSprites;
+
+
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         UpdateValues();
-        GenerateIdentifier();
     }
 
-    void GenerateIdentifier()
+    public static List<Sprite> GetSprites()
     {
-        id = System.Guid.NewGuid().ToString();
+        if (!spritesRun)
+        {
+            spritesRun = true;
+            availableSprites = initialList;
+            Debug.Log("Possible Sprites: " + availableSprites.Count);
+            availableSprites.Remove(Player.PlayerSprite);
+        }
+        return availableSprites;
     }
+
 
     void UpdateValues()
     {
+        if (!spritesRun)
+        {
+            initialList = sprites;
+        }
+
         healedRing.SetActive(isHealed);
         hurtRing.SetActive(!isHealed);
         SetColor(isHealed ? healedColor : normalColor);
+        SetSprite(isHealed ? Player.PlayerSprite : GetRandomSprite());
     }
 
     void SetColor(Color c)
     {
-        spriteRenderer.color = c;
+        //spriteRenderer.color = c;
+        spriteRenderer.color = Color.white;
+    }
+
+    Sprite GetRandomSprite()
+    {
+        List<Sprite> possibleSprites = GetSprites();
+        Sprite chosen = possibleSprites[UnityEngine.Random.Range(0, possibleSprites.Count)];
+        return chosen;
+    }
+
+    void SetSprite(Sprite s)
+    {
+        spriteRenderer.sprite = s;
     }
 
     public void Heal()
     {
         isHealed = true;
+        UpdateValues();
+    }
+
+    public void Hurt()
+    {
+        isHealed = false;
         UpdateValues();
     }
 

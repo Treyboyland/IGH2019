@@ -55,20 +55,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BaseCore.cs" />
+     <Compile Include="Assets\Scripts\BasePool.cs" />
+     <Compile Include="Assets\Scripts\BaseSpawner.cs" />
+     <Compile Include="Assets\Scripts\CoreHealer.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyBase.cs" />
+     <Compile Include="Assets\Scripts\EnemyHurtRing.cs" />
      <Compile Include="Assets\Scripts\EnemyPool.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\ExpandOnEvent.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HealRing.cs" />
+     <Compile Include="Assets\Scripts\IdentifiedCharacter.cs" />
      <Compile Include="Assets\Scripts\IImpact.cs" />
      <Compile Include="Assets\Scripts\ImpactRing.cs" />
+     <Compile Include="Assets\Scripts\InstaKill.cs" />
      <Compile Include="Assets\Scripts\KillRing.cs" />
      <Compile Include="Assets\Scripts\MainLoader.cs" />
      <Compile Include="Assets\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\PlayerDirection.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealRing.cs" />
      <Compile Include="Assets\Scripts\PlayerKillRing.cs" />
      <Compile Include="Assets\Scripts\RandomMovement.cs" />
+     <Compile Include="Assets\Scripts\RandomMovementObject.cs" />
+     <Compile Include="Assets\Scripts\RandomScaler.cs" />
      <Compile Include="Assets\Scripts\RandomScaleXY.cs" />
+     <Compile Include="Assets\Scripts\SingleSoundPlayer.cs" />
+     <Compile Include="Assets\Scripts\SoundPool.cs" />
+     <Compile Include="Assets\Scripts\TeleportRandomly.cs" />
      <Compile Include="Assets\Scripts\TimeHelper.cs" />
      <Compile Include="Assets\Scripts\TitleLoader.cs" />
      <Compile Include="Assets\Scripts\TrackPlayer.cs" />
@@ -88,6 +105,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TitleScript.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />

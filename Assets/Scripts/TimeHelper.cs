@@ -57,4 +57,9 @@ public class TimeHelper : MonoBehaviour
     {
         return seconds <= elapsedSeconds;
     }
+
+    public float GetProgressTowardsTime(float seconds)
+    {
+        return seconds == 0 ? Mathf.Infinity : elapsedSeconds / seconds;
+    }
 }

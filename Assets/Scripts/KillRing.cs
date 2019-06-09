@@ -5,6 +5,9 @@ using UnityEngine;
 public class KillRing : MonoBehaviour, IImpact
 {
     [SerializeField]
+    IdentifiedCharacter self;
+
+    [SerializeField]
     TimeHelper helper;
 
     [SerializeField]
@@ -59,6 +62,7 @@ public class KillRing : MonoBehaviour, IImpact
         }
 
         enemy.Kill();
+        GameManager.Manager.OnEnemyKilled.Invoke(self.Id);
     }
 
     public void Cancel(Enemy enemy)
@@ -68,7 +72,7 @@ public class KillRing : MonoBehaviour, IImpact
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.LogWarning("Collider hit!!!");
+        //Debug.LogWarning("Collider hit!!!");
         Enemy enemy = other.GetComponent<Enemy>();
         if (enemy != null)
         {

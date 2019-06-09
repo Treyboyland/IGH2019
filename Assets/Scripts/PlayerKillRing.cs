@@ -14,7 +14,7 @@ public class PlayerKillRing : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Player player = other.GetComponent<Player>();
-        if (player != null)
+        if (player != null && player.IsPlayerControlled)
         {
             StartCoroutine(PrepareToKillPlayer(player));
         }
@@ -29,7 +29,7 @@ public class PlayerKillRing : MonoBehaviour
         {
             yield return null;
         }
-        Destroy(player.gameObject);
+        player.Harm();
     }
 
 

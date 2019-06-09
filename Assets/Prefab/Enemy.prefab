@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254686903}
-  - component: {fileID: 254686904}
   m_Layer: 8
   m_Name: Player Bad Bits
   m_TagString: Untagged
@@ -29,23 +28,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1392298514}
+  - {fileID: 748846096113675263}
   m_Father: {fileID: 8454243335385558135}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &254686904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254686902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26103ffe0826a9f4ba500a9bccdb8e56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helper: {fileID: 0}
-  time: 0
 --- !u!1 &856556609
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +77,8 @@ GameObject:
   - component: {fileID: 1392298517}
   - component: {fileID: 1392298516}
   - component: {fileID: 1392298515}
+  - component: {fileID: 2354492040028897986}
+  - component: {fileID: 7441051248282931799}
   m_Layer: 0
   m_Name: Kill Circle
   m_TagString: Untagged
@@ -214,7 +202,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helper: {fileID: 1392298517}
-  time: 3
+  time: 2
+--- !u!114 &2354492040028897986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392298513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13b134f19f56c24689c9238125caabc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 8454243335385558134}
+  helper: {fileID: 1392298517}
+  elapsedTime: 2
+--- !u!114 &7441051248282931799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392298513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5f6fd44fb3342419a825ddf91d4df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 8454243335385558134}
+  expansionFactor: 0.1
+  effect: 2
+  isRestricted: 1
+  maxExpansion: 10
 --- !u!1 &1662986399
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +249,8 @@ GameObject:
   - component: {fileID: 1662986403}
   - component: {fileID: 1662986402}
   - component: {fileID: 1662986401}
+  - component: {fileID: 3730901968259492700}
+  - component: {fileID: 4828953059948265411}
   m_Layer: 0
   m_Name: Healing Circle
   m_TagString: Untagged
@@ -338,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ddf93b39f3964048beb4ebb149045c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 8454243335385558134}
   helper: {fileID: 1662986403}
   elapsedTime: 2
 --- !u!114 &1662986401
@@ -353,6 +376,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleRange: {x: 1.5, y: 10}
+--- !u!114 &3730901968259492700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662986399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5f6fd44fb3342419a825ddf91d4df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 8454243335385558134}
+  expansionFactor: 0.1
+  effect: 1
+  isRestricted: 1
+  maxExpansion: 10
+--- !u!114 &4828953059948265411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662986399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbaee4b867025347bc5601f05f26b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6224008174726416760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 748846096113675263}
+  - component: {fileID: 8332130876695353054}
+  m_Layer: 0
+  m_Name: Hurt Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &748846096113675263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224008174726416760}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 254686903}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8332130876695353054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224008174726416760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f03943137c65646ad24859a5d1adab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8454243335385558089
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +547,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8454243335385558088}
+  sprites:
+  - {fileID: 21300000, guid: 7b091b0460c4b0941a0a43ce304d78fd, type: 3}
+  - {fileID: 21300000, guid: f3f9b3188fabe99418c1e98ef5af3670, type: 3}
+  - {fileID: 21300000, guid: 8d855645134d577459b49b233af7dc37, type: 3}
+  - {fileID: 21300000, guid: affd5ad1f918e3a4f950ac3ce6255045, type: 3}
+  - {fileID: 21300000, guid: 88037c3f3201cb9428bc485fae1b21c4, type: 3}
+  - {fileID: 21300000, guid: 8996519f8b4e98c4ab62a115a3509d8f, type: 3}
+  - {fileID: 21300000, guid: 90739c21a8762744e9cdea18862533b9, type: 3}
+  - {fileID: 21300000, guid: 415c5cabcc3914446a912e5cabb6796e, type: 3}
+  - {fileID: 21300000, guid: 7dbf49b937ae33e4d833895764e45183, type: 3}
   healedRing: {fileID: 856556609}
   hurtRing: {fileID: 254686902}
   healedColor: {r: 1, g: 1, b: 0, a: 1}

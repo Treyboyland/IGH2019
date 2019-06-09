@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
+    Transform origin;
+
+    [SerializeField]
     EnemyPool pool;
 
     [SerializeField]
@@ -31,12 +34,29 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     int initialSpawns;
 
+    bool isRunning = true;
 
     // Start is called before the first frame update
     void Start()
     {
         InitialSpawn();
         StartCoroutine(SpawnRandomly());
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(SpawnRandomly());
+    }
+
+    public void StopSpawning()
+    {
+        StopAllCoroutines();
+        isRunning = false;
+    }
+
+    private void OnDisable()
+    {
+        isRunning = false;
     }
 
     void InitialSpawn()
@@ -58,7 +78,8 @@ public class EnemySpawner : MonoBehaviour
     void InstantiateEnemy()
     {
         Enemy e = pool.GetObject();
-        e.transform.position = GetRandomPosition();
+        e.IsHealed = false;
+        e.transform.position = GetRandomPosition() + (Vector2)origin.position;
         e.gameObject.SetActive(true);
     }
 
@@ -88,6 +109,11 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnRandomly()
     {
+        if (isRunning)
+        {
+            yield break;
+        }
+        isRunning = true;
         while (true)
         {
             yield return StartCoroutine(Wait(UnityEngine.Random.Range(timeBetweenSpawns.x, timeBetweenSpawns.y)));

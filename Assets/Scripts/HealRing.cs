@@ -5,24 +5,17 @@ using UnityEngine;
 public class HealRing : MonoBehaviour, IImpact
 {
     [SerializeField]
+    IdentifiedCharacter self;
+
+    [SerializeField]
     TimeHelper helper;
 
     [SerializeField]
     float elapsedTime;
 
+
+
     Dictionary<string, Coroutine> coroutineDictionary = new Dictionary<string, Coroutine>();
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void StopCoroutineOnEnemy(string id)
     {
@@ -59,6 +52,7 @@ public class HealRing : MonoBehaviour, IImpact
         }
 
         enemy.Heal();
+        GameManager.Manager.OnEnemyHealed.Invoke(self.Id);
     }
 
     public void Cancel(Enemy enemy)
@@ -69,7 +63,7 @@ public class HealRing : MonoBehaviour, IImpact
     private void OnTriggerEnter2D(Collider2D other)
     {
         Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null)
+        if (enemy != null && !enemy.IsHealed && enemy.Id != self.Id)
         {
             Affect(enemy);
         }

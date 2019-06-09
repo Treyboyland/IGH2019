@@ -58,4 +58,18 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : MonoBehaviour
 
         return null;
     }
+
+    public int GetActiveObjects()
+    {
+        int count = 0;
+        foreach (T obj in objectPool)
+        {
+            if (obj.gameObject.activeInHierarchy)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }
