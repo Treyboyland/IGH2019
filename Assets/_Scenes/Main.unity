@@ -4372,7 +4372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helper: {fileID: 2058230515}
-  posRange: {x: -75, y: 75}
+  posRange: {x: -60, y: 60}
   waitTime: {x: 30, y: 60}
 --- !u!114 &2058230515
 MonoBehaviour:
