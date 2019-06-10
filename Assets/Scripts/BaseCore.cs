@@ -16,6 +16,14 @@ public class BaseCore : MonoBehaviour
     [SerializeField]
     Color heal;
 
+    public bool IsHealed
+    {
+        get
+        {
+            return enemyBase.IsHealed;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

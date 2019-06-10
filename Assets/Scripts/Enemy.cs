@@ -102,6 +102,11 @@ public class Enemy : IdentifiedCharacter
         UpdateValues();
     }
 
+    private void OnDestroy()
+    {
+        spritesRun = false;
+    }
+
     public void Hurt()
     {
         isHealed = false;

@@ -8,7 +8,7 @@ public class CoreHealer : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         BaseCore core = other.GetComponent<BaseCore>();
-        if(core != null)
+        if(core != null && !core.IsHealed)
         {
             core.Heal();
         }

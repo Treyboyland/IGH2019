@@ -29,7 +29,7 @@ public class PlayerDirection : MonoBehaviour
             }
         }
 
-        return chosen != null ? chosen.transform.position : new Vector3();
+        return chosen != null ? chosen.transform.position - player.transform.position : new Vector3();
     }
 
 
@@ -37,10 +37,10 @@ public class PlayerDirection : MonoBehaviour
 
     void SetRotation()
     {
-        Vector3 rotation = transform.eulerAngles;
-        rotation.z = Vector3.Angle(player.transform.position, GetClosestBase()) + 90;
-        Debug.Log("Rotation: " + rotation.z);
-        transform.eulerAngles = rotation;
+        //I LOATHE QUATERNIONS!!!!
+        Vector3 dir = GetClosestBase();
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90; //I don't understand this, but this is what the tutorial said to do
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
 

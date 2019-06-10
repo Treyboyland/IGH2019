@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scripts\RandomMovementObject.cs" />
      <Compile Include="Assets\Scripts\RandomScaler.cs" />
      <Compile Include="Assets\Scripts\RandomScaleXY.cs" />
+     <Compile Include="Assets\Scripts\SingleBackgroundAudio.cs" />
      <Compile Include="Assets\Scripts\SingleSoundPlayer.cs" />
      <Compile Include="Assets\Scripts\SoundPool.cs" />
      <Compile Include="Assets\Scripts\TeleportRandomly.cs" />

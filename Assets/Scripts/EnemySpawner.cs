@@ -78,9 +78,12 @@ public class EnemySpawner : MonoBehaviour
     void InstantiateEnemy()
     {
         Enemy e = pool.GetObject();
-        e.IsHealed = false;
-        e.transform.position = GetRandomPosition() + (Vector2)origin.position;
-        e.gameObject.SetActive(true);
+        if (e != null)
+        {
+            e.IsHealed = false;
+            e.transform.position = GetRandomPosition() + (Vector2)origin.position;
+            e.gameObject.SetActive(true);
+        }
     }
 
     Vector2 GetRandomPosition()

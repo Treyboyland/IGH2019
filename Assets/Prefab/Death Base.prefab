@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 1231396013909834764}
   - component: {fileID: 1231396013909834765}
   - component: {fileID: 1231396013909834766}
+  - component: {fileID: 5762888848984843690}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Untagged
@@ -298,6 +299,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5762888848984843690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231396013909834864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d75e6f7815a74c92ef425c1c1a905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1231396014055633640
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helper: {fileID: 1231396014071547638}
-  time: 0.25
+  time: 0.1
 --- !u!114 &1231396014069027811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,7 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 8454243335385558134, guid: 91e12647966929d4bb840906f6fd49df,
     type: 3}
-  canIncrease: 1
+  canIncrease: 0
   initialSize: 50
 --- !u!114 &1231396014472434979
 MonoBehaviour:
