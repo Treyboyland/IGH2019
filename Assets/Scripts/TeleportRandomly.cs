@@ -40,6 +40,12 @@ public class TeleportRandomly : MonoBehaviour
         transform.position = pos;
     }
 
+    public void SetToPosition(Vector3 position)
+    {
+        helper.RestartTime();
+        transform.position = position;
+    }
+
 
     IEnumerator Teleport()
     {

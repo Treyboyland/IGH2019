@@ -43,6 +43,7 @@ public class EnemyBase : MonoBehaviour
         spawner.StopSpawning();
         ChangeParticles();
         StartCoroutine(WaitThenDisable());
+        GameManager.Manager.OnBaseHealed.Invoke();
     }
 
     void ChangeParticles()

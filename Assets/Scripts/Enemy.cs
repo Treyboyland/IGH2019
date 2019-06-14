@@ -76,6 +76,7 @@ public class Enemy : IdentifiedCharacter
         hurtRing.SetActive(!isHealed);
         SetColor(isHealed ? healedColor : normalColor);
         SetSprite(isHealed ? Player.PlayerSprite : GetRandomSprite());
+        GameManager.Manager.OnCheckEnemyStatus.Invoke();
     }
 
     void SetColor(Color c)

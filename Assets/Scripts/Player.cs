@@ -77,6 +77,7 @@ public class Player : IdentifiedCharacter
         goodStuff.SetActive(false);
         List<Sprite> sprites = Enemy.GetSprites();
         spriteRenderer.sprite = sprites[UnityEngine.Random.Range(0, sprites.Count)];
+        GameManager.Manager.OnCheckEnemyStatus.Invoke();
     }
 
     public void Heal()
@@ -85,6 +86,7 @@ public class Player : IdentifiedCharacter
         badStuff.SetActive(false);
         goodStuff.SetActive(true);
         spriteRenderer.sprite = PlayerSprite;
+        GameManager.Manager.OnCheckEnemyStatus.Invoke();
     }
 
 }

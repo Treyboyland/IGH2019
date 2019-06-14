@@ -67,7 +67,9 @@
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\ExpandOnEvent.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\HealedGauge.cs" />
      <Compile Include="Assets\Scripts\HealRing.cs" />
+     <Compile Include="Assets\Scripts\HideCursor.cs" />
      <Compile Include="Assets\Scripts\IdentifiedCharacter.cs" />
      <Compile Include="Assets\Scripts\IImpact.cs" />
      <Compile Include="Assets\Scripts\ImpactRing.cs" />
@@ -83,6 +85,7 @@
      <Compile Include="Assets\Scripts\RandomMovementObject.cs" />
      <Compile Include="Assets\Scripts\RandomScaler.cs" />
      <Compile Include="Assets\Scripts\RandomScaleXY.cs" />
+     <Compile Include="Assets\Scripts\RoastSummoner.cs" />
      <Compile Include="Assets\Scripts\SingleBackgroundAudio.cs" />
      <Compile Include="Assets\Scripts\SingleSoundPlayer.cs" />
      <Compile Include="Assets\Scripts\SoundPool.cs" />

@@ -37,7 +37,7 @@ public class BaseSpawner : MonoBehaviour
         do
         {
             pos = spawnLocations[UnityEngine.Random.Range(0, spawnLocations.Count)].transform.position;
-            Debug.Log(pos);
+            //Debug.Log(pos);
         }
         while (Vector3.Distance(pos, player.transform.position) < 10);
 
